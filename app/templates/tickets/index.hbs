@@ -1,67 +1,65 @@
-<main>
-  <header class="header">
-    <h1>Bem-vindo ao Suporte da Taller</h1>
+<header class="header">
+  <h1>Bem-vindo ao Suporte da Taller</h1>
+</header>
+
+{{#link-to 'tickets.new' class="new-ticket"}}Abrir um novo ticket{{/link-to}}
+
+<section class="container">
+  <header>
+    <h2>Histórico de tickets</h2>
+
+    <div class="filter">
+      <h3>Filtrar por</h3>
+
+      <div class="field">
+        <label for="categoria">Categoria</label>
+        <select class="select" id="categoria">
+          <option value="0">Dúvida</option>
+          <option value="1">Conta violada</option>
+          <option value="2">Outros</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="produto">Produto</label>
+        <select class="select" id="produto">
+          <option value="0">General Wars</option>
+          <option value="1">Barbarians</option>
+          <option value="2">Magic Campus</option>
+        </select>
+      </div>
+      <button type="button" class="button">Filtrar</button>
+    </div>
   </header>
 
-  {{#link-to 'tickets' class="new-ticket"}}Abrir um novo ticket{{/link-to}}
-
-  <section class="container">
-    <header>
-      <h2>Histórico de tickets</h2>
-
-      <div class="filter">
-        <h3>Filtrar por</h3>
-
-        <div class="field">
-          <label for="categoria">Categoria</label>
-          <select class="select" id="categoria">
-            <option value="0">Dúvida</option>
-            <option value="1">Conta violada</option>
-            <option value="2">Outros</option>
-          </select>
-        </div>
-        <div class="field">
-          <label for="produto">Produto</label>
-          <select class="select" id="produto">
-            <option value="0">General Wars</option>
-            <option value="1">Barbarians</option>
-            <option value="2">Magic Campus</option>
-          </select>
-        </div>
-        <button type="button" class="button">Filtrar</button>
-      </div>
-    </header>
-
-    <div class="table-container">
-      <table>
-        <tr>
-          <th>Código do ticket</th>
-          <th>Categoria</th>
-          <th>Produto</th>
-          <th>Criado em</th>
-          <th>Última atualização</th>
-          <th>Atendido por</th>
-          <th>Status</th>
-        </tr>
-        <tr>
-          <td>0025</td>
-          <td>Conta violada</td>
-          <td>General War</td>
-          <td>15/03/2017</td>
-          <td>17/03/2017</td>
-          <td>--</td>
-          <td>Aberto</td>
-        </tr>
-        <tr>
-          <td>0026</td>
-          <td>Dúvida</td>
-          <td>Barbarians</td>
-          <td>20/02/2017</td>
-          <td>--</td>
-          <td>Maria</td>
-          <td>Fechado</td>
-        </tr>
-      </table>
-    </div>
-  </section>
-</main>
+  <div class="table-container">
+    <table>
+      <tr>
+        <th>Código do ticket</th>
+        <th>Categoria</th>
+        <th>Produto</th>
+        <th>Criado em</th>
+        <th>Última atualização</th>
+        <th>Atendido por</th>
+        <th>Status</th>
+      </tr>
+      <tr>
+        <td>0025</td>
+        <td>Conta violada</td>
+        <td>General War</td>
+        <td>15/03/2017</td>
+        <td>17/03/2017</td>
+        <td>--</td>
+        <td>Aberto</td>
+      </tr>
+      <tr>
+        <td>0026</td>
+        <td>Dúvida</td>
+        <td>Barbarians</td>
+        <td>20/02/2017</td>
+        <td>--</td>
+        <td>Maria</td>
+        <td>Fechado</td>
+      </tr>
+    </table>
+  </div>
+</section>
