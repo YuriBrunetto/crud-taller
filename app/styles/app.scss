@@ -1,0 +1,144 @@
+$grey: transparentize(#4b4b4b, .46);
+
+* {
+  -webkit-font-smoothing: antialiased;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #fafafa;
+  font-family: 'Roboto', sans-serif;
+  color: #4b4b4b;
+}
+
+
+
+main {
+  max-width: 1024px;
+  margin: 0 auto;
+}
+.header {
+  padding: 96px 0 64px;
+  text-align: center;
+
+  h1 {
+    font-size: 48px;
+  }
+}
+
+
+.new-ticket {
+  display: inline-block;
+  background-color: #00BCD4;
+  color: #fff;
+  text-transform: uppercase;
+  padding: 16px 24px;
+  font-size: 16px;
+  border: none;
+  outline: none;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.container {
+  border-radius: 4px;
+  padding: 40px 0;
+  background-color: #fff;
+  margin-top: 24px;
+
+  header {
+    padding: 0 40px;
+  }
+}
+.filter {
+  margin-top: 24px;
+  color: $grey;
+  display: flex;
+  height: 40px;
+  align-items: center;
+
+  h3 {
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 150%;
+  }
+
+  .field, .button {
+    margin-left: 20px;
+  }
+  .field:first-of-type {
+    margin-left: 40px;
+  }
+}
+
+
+
+// table
+.table-container {
+  padding: 0 40px;
+  table {
+    width: 100%;
+    text-align: left;
+    margin-top: 40px;
+    border-collapse: collapse;
+
+    tr {
+      height: 40px;
+      &:nth-child(odd) {
+        background-color: transparentize(#4b4b4b, .95);
+      }
+      &:not(:first-child) {
+        cursor: pointer;
+        transition: opacity .3s;
+        &:hover {
+          opacity: .7;
+        }
+      }
+
+      td {
+        color: $grey;
+      }
+    }
+  }
+}
+
+
+
+// inputs
+.select {
+  height: 40px;
+  display: inline-block;
+  border: 1px solid transparentize(#4b4b4b, .88);
+  border-radius: 40px;
+  color: $grey;
+  outline: none;
+  background-color: #fff;
+  padding: 0 16px;
+  font-size: 16px;
+  margin-left: 8px;
+}
+
+.button {
+  display: inline-block;
+  background-color: #4b4b4b;
+  color: #fff;
+  font-size: 14px;
+  padding: 12px 24px;
+  border: none;
+  outline: none;
+  border-radius: 4px;
+  text-transform: uppercase;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+
+
+.footer {
+  text-align: center;
+  padding: 40px;
+  font-size: 12px;
+}
