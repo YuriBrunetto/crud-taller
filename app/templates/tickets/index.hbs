@@ -14,17 +14,17 @@
       <div class="field">
         <label for="categoria">Categoria</label>
         <select class="select" id="categoria">
-          <option value="0">Dúvida</option>
-          <option value="1">Conta violada</option>
-          <option value="2">Outros</option>
+          <option value="duvida">Dúvida</option>
+          <option value="conta-violada">Conta violada</option>
+          <option value="outros">Outros</option>
         </select>
       </div>
       <div class="field">
         <label for="produto">Produto</label>
         <select class="select" id="produto">
-          <option value="0">General Wars</option>
-          <option value="1">Barbarians</option>
-          <option value="2">Magic Campus</option>
+          <option value="general-wars">General Wars</option>
+          <option value="barbarians">Barbarians</option>
+          <option value="magic-campus">Magic Campus</option>
         </select>
       </div>
       <button type="button" class="button">Filtrar</button>
@@ -42,6 +42,18 @@
         <th>Atendido por</th>
         <th>Status</th>
       </tr>
+      {{#each model as |ticket|}}
+      <tr>
+        <td>{{ticket.id}}</td>
+        <td>{{ticket.category}}</td>
+        <td>{{ticket.product}}</td>
+        <td>{{ticket.createdAt}}</td>
+        <td>{{ticket.updatedAt}}</td>
+        <td>{{ticket.attendedBy}}</td>
+        <td>{{ticket.status}}</td>
+      </tr>
+      {{/each}}
+
       <tr>
         <td>0025</td>
         <td>Conta violada</td>

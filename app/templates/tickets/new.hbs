@@ -1,1 +1,33 @@
-<h1>New ticket</h1>
+<header class="header">
+  <h1>Novo ticket</h1>
+</header>
+
+<section class="container">
+  <div class="form">
+    <div class="field">
+      <label>Categoria</label>
+      <select class="select" name="category" onchange={{action "updateValue" value="target.value"}}>
+        <option value="1">Dúvida</option>
+        <option value="2">Conta violada</option>
+        <option value="3">Outros</option>
+      </select>
+    </div>
+
+    <div class="field">
+      <label>Produto</label>
+      <select class="select" name="product" onchange={{action "updateValue" value="target.value"}}>
+        <option value="1">General Wars</option>
+        <option value="2">Barbarians</option>
+        <option value="3">Magic Campus</option>
+      </select>
+    </div>
+
+    <div class="field field-g">
+      <label>Mensagem</label>
+      {{textarea value=message class="textarea" placeholder="Escreva sua mensagem aqui..."}}
+    </div>
+
+    <button type="button" class="button" {{ action 'saveTicket' }}>Salvar ticket</button>
+  </div>
+
+</section>
