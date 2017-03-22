@@ -133,6 +133,27 @@ main {
 
 
 
+// edit ticket
+.header.edit {
+  text-align: left;
+  h1 {
+    font-size: 32px;
+    span {
+      font-size: 24px;
+      font-weight: normal;
+    }
+  }
+  p {
+    color: $grey;
+    line-height: 150%;
+    &:first-of-type {
+      margin-top: 8px;
+    }
+  }
+}
+
+
+
 // inputs
 .select {
   height: 40px;
@@ -176,3 +197,5 @@ main {
   padding: 40px;
   font-size: 12px;
 }
+
+@import "ember-power-select";

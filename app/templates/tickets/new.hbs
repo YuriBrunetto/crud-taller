@@ -6,20 +6,16 @@
   <div class="form">
     <div class="field">
       <label>Categoria</label>
-      <select class="select" name="category" onchange={{action "updateValue" value="target.value"}}>
-        <option value="1">Dúvida</option>
-        <option value="2">Conta violada</option>
-        <option value="3">Outros</option>
-      </select>
+      {{#power-select selected=category class="select" options=categories onchange=(action "chooseCategory") as |name|}}
+        {{name}}
+      {{/power-select}}
     </div>
 
     <div class="field">
       <label>Produto</label>
-      <select class="select" name="product" onchange={{action "updateValue" value="target.value"}}>
-        <option value="1">General Wars</option>
-        <option value="2">Barbarians</option>
-        <option value="3">Magic Campus</option>
-      </select>
+      {{#power-select selected=product class="select" options=products onchange=(action "chooseProduct") as |name|}}
+        {{name}}
+      {{/power-select}}
     </div>
 
     <div class="field field-g">

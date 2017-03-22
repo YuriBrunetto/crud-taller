@@ -1,0 +1,22 @@
+<header class="header edit">
+  <h1>Ticket {{model.id}} <span>Status: {{model.status}}</span></h1>
+  <p>Categoria: {{model.category}}</p>
+  <p>Produto: {{model.product}}</p>
+  <p>Data: {{model.createdAt}}</p>
+</header>
+
+<section class="container">
+  <div class="form">
+    <div class="field field-g">
+      <label>Mensagem do usuário</label>
+      {{textarea value=model.message class="textarea" readonly="true"}}
+    </div>
+    <div class="field field-g">
+      <label>Resposta</label>
+      {{textarea value=response class="textarea" placeholder="Sua resposta aqui..."}}
+    </div>
+    <button type="button" class="button" {{ action 'answerTicket' model }}>Responder ticket</button>
+    <button type="button" class="button" {{ action 'closeTicket' model }}>Fechar ticket</button>
+  </div>
+
+</section>

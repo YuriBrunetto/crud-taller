@@ -44,7 +44,7 @@
       </tr>
       {{#each model as |ticket|}}
       <tr>
-        <td>{{ticket.id}}</td>
+        <td>{{#link-to 'tickets.edit' ticket.id}}{{ticket.id}}{{/link-to}}</td>
         <td>{{ticket.category}}</td>
         <td>{{ticket.product}}</td>
         <td>{{ticket.createdAt}}</td>
@@ -53,25 +53,6 @@
         <td>{{ticket.status}}</td>
       </tr>
       {{/each}}
-
-      <tr>
-        <td>0025</td>
-        <td>Conta violada</td>
-        <td>General War</td>
-        <td>15/03/2017</td>
-        <td>17/03/2017</td>
-        <td>--</td>
-        <td>Aberto</td>
-      </tr>
-      <tr>
-        <td>0026</td>
-        <td>Dúvida</td>
-        <td>Barbarians</td>
-        <td>20/02/2017</td>
-        <td>--</td>
-        <td>Maria</td>
-        <td>Fechado</td>
-      </tr>
     </table>
   </div>
 </section>

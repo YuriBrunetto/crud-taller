@@ -7,5 +7,6 @@ export default DS.Model.extend({
   updatedAt: DS.attr('date'),
   attendedBy: DS.attr('string'),
   status: DS.attr('string'),
-  message: DS.attr('message')
+  message: DS.attr('string'),
+  response: DS.attr('string')
 });
