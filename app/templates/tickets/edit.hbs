@@ -1,4 +1,5 @@
 <header class="header edit">
+  {{#link-to 'tickets'}}Voltar para Tickets{{/link-to}}
   <h1>Ticket {{model.id}} <span>Status: {{model.status}}</span></h1>
   <p>Categoria: {{model.category}}</p>
   <p>Produto: {{model.product}}</p>
@@ -9,14 +10,32 @@
   <div class="form">
     <div class="field field-g">
       <label>Mensagem do usuário</label>
-      {{textarea value=model.message class="textarea" readonly="true"}}
+      <p>{{textarea value=model.message class="textarea" readonly="true"}}</p>
     </div>
-    <div class="field field-g">
-      <label>Resposta</label>
-      {{textarea value=response class="textarea" placeholder="Sua resposta aqui..."}}
-    </div>
-    <button type="button" class="button" {{ action 'answerTicket' model }}>Responder ticket</button>
+
+    {{#if (eq model.status "Aguardando")}}
+      <div class="field field-g">
+        <label>Resposta</label>
+        {{textarea value=response class="textarea" placeholder="Sua resposta aqui..."}}
+      </div>
+      <div class="field field-g">
+        <label>Nome</label>
+        {{input value=author class="select" placeholder="Seu nome"}}
+      </div>
+      <button type="button" class="button" {{ action 'answerTicket' model }}>Responder ticket</button>
+    {{/if}}
     <button type="button" class="button" {{ action 'closeTicket' model }}>Fechar ticket</button>
+  </div>
+
+  <div class="responses">
+    <h2>Histórico de atendimento</h2>
+
+    {{#each model.responses as |response|}}
+    <div class="response">
+      <p>{{response.author}} - {{response.date}}</p>
+      <p>{{response.body}}</p>
+    </div>
+    {{/each}}
   </div>
 
 </section>

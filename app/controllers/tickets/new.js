@@ -7,6 +7,14 @@ export default Ember.Controller.extend({
   products: ['General Wars', 'Barbarians', 'Magic Campus'],
   product: 'General Wars',
 
+  formatDate(date) {
+    let day = date.getDate();
+    let month = date.getMonth();
+    let year = date.getFullYear();
+
+    return `${day}/${month+1}/${year}`;
+  },
+
   actions: {
     chooseCategory(cat) {
       this.set('category', cat);
@@ -18,10 +26,10 @@ export default Ember.Controller.extend({
       let newTicket = this.store.createRecord('ticket', {
         category: this.get('category'),
         product: this.get('product'),
-        createdAt: new Date(),
+        createdAt: this.formatDate(new Date()),
         updatedAt: '--',
         attendedBy: '--',
-        status: 'Aberto',
+        status: 'Aguardando',
         message: this.get('message'),
         response: null
       });
